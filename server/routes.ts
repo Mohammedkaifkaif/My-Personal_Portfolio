@@ -1,20 +1,52 @@
 import type { Express } from "express";
 import { createServer, type Server } from "http";
-import { storage } from "./storage";
-import { insertContactSchema } from "@shared/schema";
 import { z } from "zod";
 
+// Simple validation schema for contact form
+const contactSchema = z.object({
+  name: z.string().min(1, "Name is required"),
+  email: z.string().email("Valid email is required"),
+  message: z.string().min(1, "Message is required")
+});
+
 export async function registerRoutes(app: Express): Promise<Server> {
-  // Contact form submission
+  // Contact form submission to Google Sheets
   app.post("/api/contact", async (req, res) => {
     try {
-      const contactData = insertContactSchema.parse(req.body);
-      const contact = await storage.createContact(contactData);
-      res.json({ success: true, message: "Message sent successfully!", contact });
+      const contactData = contactSchema.parse(req.body);
+      
+      // Google Sheets Web App URL - User will need to provide this
+      const googleSheetsUrl = process.env.GOOGLE_SHEETS_URL;
+      
+      if (!googleSheetsUrl) {
+        return res.status(500).json({ 
+          success: false, 
+          message: "Google Sheets integration not configured" 
+        });
+      }
+
+      // Send data to Google Sheets
+      const response = await fetch(googleSheetsUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          ...contactData,
+          timestamp: new Date().toISOString()
+        })
+      });
+
+      if (response.ok) {
+        res.json({ success: true, message: "Message sent successfully!" });
+      } else {
+        res.status(500).json({ success: false, message: "Failed to send message" });
+      }
     } catch (error) {
       if (error instanceof z.ZodError) {
         res.status(400).json({ success: false, message: "Invalid form data", errors: error.errors });
       } else {
+        console.error('Contact form error:', error);
         res.status(500).json({ success: false, message: "Failed to send message" });
       }
     }

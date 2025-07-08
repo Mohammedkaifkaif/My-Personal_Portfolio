@@ -18,9 +18,8 @@ This is a modern, interactive personal portfolio website built with React, TypeS
 ### Backend Architecture
 - **Runtime**: Node.js with Express.js
 - **Language**: TypeScript with ES modules
-- **Database**: PostgreSQL with Drizzle ORM
-- **Database Provider**: Neon Database (@neondatabase/serverless)
-- **Session Management**: connect-pg-simple for PostgreSQL session store
+- **Data Storage**: Google Sheets integration (no database needed)
+- **Form Processing**: Direct Google Sheets Web App integration
 - **Development**: tsx for TypeScript execution
 
 ## Key Components
@@ -51,7 +50,7 @@ This is a modern, interactive personal portfolio website built with React, TypeS
 1. **Client-Side Rendering**: React app serves from Vite dev server in development
 2. **Form Submission**: Contact form data validated client-side and sent to `/api/contact`
 3. **API Processing**: Express server validates with Zod schemas and processes requests
-4. **Database Operations**: Drizzle ORM handles database interactions (schema defined, ready for PostgreSQL)
+4. **Google Sheets Integration**: Form data sent directly to Google Sheets via Web App
 5. **Response Handling**: API responses handled by React Query with toast notifications
 
 ## External Dependencies
