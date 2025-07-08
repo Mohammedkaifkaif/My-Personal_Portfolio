@@ -15,32 +15,30 @@ export async function registerRoutes(app: Express): Promise<Server> {
     try {
       const contactData = contactSchema.parse(req.body);
       
-      // Google Sheets Web App URL - User will need to provide this
-      const googleSheetsUrl = process.env.GOOGLE_SHEETS_URL;
+      // Your Google Sheets Web App URL
+      const googleSheetsUrl = 'https://script.google.com/macros/s/AKfycbzu-4UKRkd_x6oMwa2JA-xep9AFKktc_SGIt8E6Qo0Fy0qzcxrZ182pYkYqDsITQI8MkQ/exec';
       
-      if (!googleSheetsUrl) {
-        return res.status(500).json({ 
-          success: false, 
-          message: "Google Sheets integration not configured" 
-        });
-      }
+      // Create FormData for Google Sheets (matches your script format)
+      const formData = new URLSearchParams();
+      formData.append('name', contactData.name);
+      formData.append('email', contactData.email);
+      formData.append('message', contactData.message);
+      formData.append('timestamp', new Date().toISOString());
 
       // Send data to Google Sheets
       const response = await fetch(googleSheetsUrl, {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
+          'Content-Type': 'application/x-www-form-urlencoded',
         },
-        body: JSON.stringify({
-          ...contactData,
-          timestamp: new Date().toISOString()
-        })
+        body: formData
       });
 
       if (response.ok) {
-        res.json({ success: true, message: "Message sent successfully!" });
+        res.json({ success: true, message: "Message sent successfully to Google Sheets!" });
       } else {
-        res.status(500).json({ success: false, message: "Failed to send message" });
+        console.error('Google Sheets response:', response.status, response.statusText);
+        res.status(500).json({ success: false, message: "Failed to send message to Google Sheets" });
       }
     } catch (error) {
       if (error instanceof z.ZodError) {
