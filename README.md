@@ -13,14 +13,22 @@ A professional and dynamic personal portfolio website built with React, Vite, an
 ✨ Animations and smooth scroll interactions
 📁 Project Structure
 My-Personal_Portfolio/
+
 ├── public/              # Static assets (images, resume)
+
 ├── src/
 │   ├── components/      # Reusable UI components
+
 │   ├── pages/           # Page sections like Home, About, Contact
+
 │   ├── App.tsx          # Main app file
+
 │   └── main.tsx         # Vite entry point
+
 ├── vite.config.ts       # Vite configuration
+
 └── package.json         # Project dependencies and scripts
+
 Tech Stack
 Frontend: React, TypeScript, Tailwind CSS
 
