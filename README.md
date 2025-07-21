@@ -12,6 +12,7 @@ A professional and dynamic personal portfolio website built with React, Vite, an
 🔗 Live links to GitHub, LinkedIn, and projects
 ✨ Animations and smooth scroll interactions
 📁 Project Structure
+
 My-Personal_Portfolio/
 ├── public/              # Static assets (images, resume)
 ├── src/
