@@ -58,20 +58,36 @@ export default function Contact() {
   };
 
   const handleDownloadCV = async () => {
-    try {
-      const response = await fetch('https://portfolio-backend-dqtb.onrender.com/api/download-cv');
-      const data = await response.json();
-      if (data.success) {
-        window.open(data.downloadUrl, '_blank');
-      }
-    } catch (error) {
-      toast({
-        title: "Error",
-        description: "Failed to download CV. Please try again.",
-        variant: "destructive",
-      });
+  try {
+    const response = await fetch('https://portfolio-backend-dqtb.onrender.com/api/download-cv');
+    if (!response.ok) {
+      throw new Error('Failed to fetch CV');
     }
-  };
+
+    const blob = await response.blob();
+    const url = window.URL.createObjectURL(blob);
+
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'Mohammed_Kaif_CV.pdf'; // ✅ Use your actual file name
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+
+    // ✅ Optional success toast
+    toast({
+      title: "Success!",
+      description: "CV downloaded successfully.",
+    });
+
+  } catch (error) {
+    toast({
+      title: "Error",
+      description: "Failed to download CV. Please try again.",
+      variant: "destructive",
+    });
+  }
+};
 
   const contactInfo = [
     {
