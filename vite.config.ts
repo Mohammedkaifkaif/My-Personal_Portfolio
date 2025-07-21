@@ -11,7 +11,7 @@ export default defineConfig({
     process.env.REPL_ID !== undefined
       ? [
           await import("@replit/vite-plugin-cartographer").then((m) =>
-            m.cartographer(),
+            m.cartographer()
           ),
         ]
       : []),
@@ -33,5 +33,11 @@ export default defineConfig({
       strict: true,
       deny: ["**/.*"],
     },
+    host: true, // ✅ Required for deployment to expose on 0.0.0.0
+  },
+  preview: {
+    port: 5000,
+    host: "0.0.0.0",
+    allowedHosts: ["portfolio-frontend-9yy6.onrender.com"], // ✅ Allow Render domain
   },
 });
