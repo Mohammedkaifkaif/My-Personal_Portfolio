@@ -8,7 +8,7 @@ export default function Projects() {
       icon: '🌐',
       gradient: 'from-electric-blue to-nebula-pink',
       github: 'https://github.com/mohammedkaifkaif',
-      demo: 'https://mohammedkaifkaif.github.io/My-Personal-Portfolio-Website/'
+      demo: 'https://mohammedkaifkaif.github.io/My_Portfolio/'
     },
     {
       title: 'Android App',
@@ -23,6 +23,30 @@ export default function Projects() {
       description: 'Full-stack web application with MySQL database integration featuring CRUD operations and user authentication.',
       icon: '🗄️',
       gradient: 'from-lightning-yellow to-electric-blue',
+      github: 'https://github.com/mohammedkaifkaif',
+      demo: '#'
+    },
+    {
+      title: 'Web Development',
+      description: 'Welcome to Mamta Bhojnalaya - Authentic Indian Taste! ✨.',
+      icon: '🗄️',
+      gradient: 'from-lightning-yellow to-electric-blue',
+      github: 'https://github.com/mohammedkaifkaif',
+      demo: '#'
+    },
+    {
+      title: 'Student Attendance Management System',
+      description: 'The Online Portal where the college/School can put a attendence of the Students, while the students are maintaining a regular classes.',
+      icon: '🌐',
+      gradient: 'from-electric-blue to-nebula-pink',
+      github: 'https://github.com/mohammedkaifkaif',
+      demo: 'https://mohammedkaifkaif.github.io/My_Portfolio/page3.html'
+    },
+    {
+      title: 'Decentralized Real-estate Marketplace ',
+      description: 'The Online Portal where the clients uses the platform to sale, buy, or rent the properties using the cryptograpy coins.',
+      icon: '📱',
+      gradient: 'from-electric-blue to-nebula-pink',
       github: 'https://github.com/mohammedkaifkaif',
       demo: '#'
     }

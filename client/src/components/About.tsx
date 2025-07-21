@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import myPhoto from '@/assets/kaif.jpeg';
 
 export default function About() {
   const skills = [
@@ -37,11 +38,15 @@ export default function About() {
           >
             <div className="relative inline-block mb-8">
               <img 
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=400" 
+                src={myPhoto} 
                 alt="Mohammed Kaif - Professional headshot" 
-                className="w-64 h-64 rounded-full object-cover border-4 border-electric-blue/50 animate-glow"
+                className="w-96 h-96 rounded-full object-cover border-4 border-electric-blue/50 animate-glow shadow-[0_0_40px_rgba(0,255,255,1)] hover:shadow-[0_0_60px_rgba(0,255,255,1)] transition-all duration-300"
               />
-              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-electric-blue/20 to-nebula-pink/20 animate-pulse"></div>
+
+              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-electric-blue/50 to-nebula-pink/50 animate-pulse"></div>
+              <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 bg-space-navy/90 backdrop-blur-sm px-4 py-2 rounded-full border border-electric-blue/50">
+                <h3 className="text-lg font-bold font-orbitron text-electric-blue">Mohammed Kaif </h3>
+              </div>
             </div>
             
             <p className="text-lg font-inter text-gray-300 mb-8 leading-relaxed">

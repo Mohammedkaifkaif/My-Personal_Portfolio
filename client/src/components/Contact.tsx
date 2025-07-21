@@ -89,7 +89,7 @@ export default function Contact() {
     {
       icon: '✉️',
       label: 'Email',
-      value: 'mohammed.kaif@example.com',
+      value: 'mohammedkaif.fr.786@gmail.com',
       gradient: 'from-lightning-yellow to-electric-blue'
     }
   ];
@@ -153,66 +153,69 @@ export default function Contact() {
             transition={{ duration: 0.8 }}
             className="bg-space-gray/30 backdrop-blur-sm rounded-xl p-8 border border-electric-blue/20"
           >
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div>
-                <label className="block text-sm font-rajdhani font-semibold text-lightning-yellow mb-2">Name</label>
-                <input
-                  type="text"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 bg-dark-matter/50 border border-electric-blue/30 rounded-lg focus:border-electric-blue focus:outline-none text-white font-inter"
-                  placeholder="Your Name"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-rajdhani font-semibold text-lightning-yellow mb-2">Email</label>
-                <input
-                  type="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 bg-dark-matter/50 border border-electric-blue/30 rounded-lg focus:border-electric-blue focus:outline-none text-white font-inter"
-                  placeholder="your@email.com"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-rajdhani font-semibold text-lightning-yellow mb-2">Message</label>
-                <textarea
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                  rows={5}
-                  className="w-full px-4 py-3 bg-dark-matter/50 border border-electric-blue/30 rounded-lg focus:border-electric-blue focus:outline-none text-white font-inter resize-none"
-                  placeholder="Your message..."
-                />
-              </div>
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className="cosmic-btn w-full bg-gradient-to-r from-electric-blue to-nebula-pink py-3 rounded-lg font-rajdhani font-semibold text-lg hover:animate-glow transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
-              >
-                {isSubmitting ? (
-                  <>
-                    <svg className="w-5 h-5 mr-2 inline animate-spin" fill="none" viewBox="0 0 24 24">
-                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                    </svg>
-                    Sending...
-                  </>
-                ) : (
-                  <>
-                    <svg className="w-5 h-5 mr-2 inline" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" />
-                    </svg>
-                    Send Message
-                  </>
-                )}
-              </button>
-            </form>
+          <form onSubmit={handleSubmit} className="space-y-6">
+           <div>
+          <label className="block text-sm font-rajdhani font-semibold text-lightning-yellow mb-2">Name</label>
+    <input
+      type="text"
+      name="name"
+      value={formData.name}
+      onChange={handleChange}
+      required
+      className="w-full px-4 py-3 bg-white/10 border border-electric-blue/30 rounded-lg focus:border-electric-blue focus:outline-none text-white font-inter"
+      placeholder="Your Name"
+    />
+  </div>
+
+  <div>
+    <label className="block text-sm font-rajdhani font-semibold text-lightning-yellow mb-2">Email</label>
+    <input
+      type="email"
+      name="email"
+      value={formData.email}
+      onChange={handleChange}
+      required
+      className="w-full px-4 py-3 bg-white/10 border border-electric-blue/30 rounded-lg focus:border-electric-blue focus:outline-none text-white font-inter"
+      placeholder="your@email.com"
+    />
+  </div>
+
+  <div>
+    <label className="block text-sm font-rajdhani font-semibold text-lightning-yellow mb-2">Message</label>
+    <textarea
+      name="message"
+      value={formData.message}
+      onChange={handleChange}
+      required
+      rows={5}
+      className="w-full px-4 py-3 bg-white/10 border border-electric-blue/30 rounded-lg focus:border-electric-blue focus:outline-none text-white font-inter resize-none"
+      placeholder="Your message..."
+    />
+  </div>
+
+  <button
+    type="submit"
+    disabled={isSubmitting}
+    className="cosmic-btn w-full bg-gradient-to-r from-electric-blue to-nebula-pink py-3 rounded-lg font-rajdhani font-semibold text-lg hover:animate-glow transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+  >
+    {isSubmitting ? (
+      <>
+        <svg className="w-5 h-5 mr-2 inline animate-spin" fill="none" viewBox="0 0 24 24">
+          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+        </svg>
+        Sending...
+      </>
+    ) : (
+      <>
+        <svg className="w-5 h-5 mr-2 inline" fill="currentColor" viewBox="0 0 20 20">
+          <path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" />
+        </svg>
+        Send Message
+      </>
+    )}
+  </button>
+</form>
           </motion.div>
         </div>
       </div>

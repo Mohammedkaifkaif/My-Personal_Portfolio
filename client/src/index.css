@@ -362,3 +362,31 @@
   .orbit-uranus { animation: orbit-uranus 30s linear infinite; }
   .orbit-neptune { animation: orbit-neptune 33s linear infinite; }
 }
+.glow-text {
+  color: white;
+  text-shadow:
+    0 0 10px #00ffff,
+    0 0 20px #00ffff,
+    0 0 30px #ffd700,
+    0 0 40px #ffd700;
+  animation: pulseGlow 2.5s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    text-shadow:
+      0 0 10px #00ffff,
+      0 0 20px #00ffff,
+      0 0 30px #ffd700,
+      0 0 40px #ffd700;
+  }
+  50% {
+    text-shadow:
+      0 0 20px #00ffff,
+      0 0 30px #00ffff,
+      0 0 40px #ffd700,
+      0 0 60px #ffd700;
+  }
+}
+
+

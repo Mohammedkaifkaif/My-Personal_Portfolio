@@ -69,7 +69,7 @@ export default function Home() {
       <footer className="py-8 border-t border-electric-blue/20 bg-space-navy/80 backdrop-blur-sm relative z-10">
         <div className="container mx-auto px-6 text-center">
           <p className="text-gray-400 font-inter">
-            Copyright © 2024 Mohammed Kaif. Made for only portfolio
+            Copyright © 2025 Mohammed Kaif. Made for only portfolio.❤️❤️❤️
           </p>
         </div>
       </footer>

@@ -5,19 +5,19 @@ export default function Work() {
     {
       title: 'Shop Website',
       description: 'The website connects you to the excellent collection',
-      image: 'https://mohammedkaifkaif.github.io/My-Personal-Portfolio-Website/images/work1.png.jpg',
+      image: 'https://mohammedkaifkaif.github.io/My_Portfolio/images/work1.png.jpg',
       gradient: 'from-electric-blue to-nebula-pink'
     },
     {
       title: 'Design Website',
       description: 'The website connects you to the excellent collection',
-      image: 'https://mohammedkaifkaif.github.io/My-Personal-Portfolio-Website/images/work2.png.jpg',
+      image: 'https://mohammedkaifkaif.github.io/My_Portfolio/images/work2.png.jpg',
       gradient: 'from-nebula-pink to-lightning-yellow'
     },
     {
       title: 'Develop Website',
       description: 'The website connects you to the excellent collection',
-      image: 'https://mohammedkaifkaif.github.io/My-Personal-Portfolio-Website/images/work3.png.jpg',
+      image: 'https://mohammedkaifkaif.github.io/My_Portfolio/images/work3.png.jpg',
       gradient: 'from-lightning-yellow to-electric-blue'
     }
   ];

@@ -29,11 +29,14 @@ export default function Hero() {
           transition={{ duration: 1 }}
           className="animate-float"
         >
-          <h1 className="text-5xl md:text-7xl font-bold font-orbitron mb-6 text-transparent bg-clip-text bg-gradient-to-r from-electric-blue via-nebula-pink to-lightning-yellow">
-            Mohammed Kaif
+          <h1 className="text-5xl md:text-7xl font-bold font-orbitron mb-6 relative overflow-hidden">
+            <span className="relative inline-block">
+              <span className="text-white">MOHAMMED KAIF محمد كايف</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-electric-blue to-transparent animate-light-sweep opacity-80"></div>
+            </span>
           </h1>
           <p className="text-xl md:text-2xl mb-8 font-rajdhani text-gray-300">
-            Computer Science Engineering Student
+            Computer Science Engineering Student!
           </p>
           <p className="text-lg md:text-xl mb-12 font-inter text-gray-400 max-w-2xl mx-auto">
             Passionate about programming, software development, and creating innovative solutions

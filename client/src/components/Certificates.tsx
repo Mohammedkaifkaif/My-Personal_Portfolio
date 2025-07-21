@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 
 export default function Certificates() {
   const handleViewCertificates = () => {
-    window.open('https://mohammedkaifkaif.github.io/My-Personal-Portfolio-Website/page2.html', '_blank');
+    window.open('https://mohammedkaifkaif.github.io/My_Portfolio/page2.html', '_blank');
   };
 
   return (

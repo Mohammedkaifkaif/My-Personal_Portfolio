@@ -16,7 +16,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       const contactData = contactSchema.parse(req.body);
       
       // Your Google Sheets Web App URL
-      const googleSheetsUrl = 'https://script.google.com/macros/s/AKfycbzu-4UKRkd_x6oMwa2JA-xep9AFKktc_SGIt8E6Qo0Fy0qzcxrZ182pYkYqDsITQI8MkQ/exec';
+      const googleSheetsUrl = 'https://script.google.com/macros/s/AKfycbx8_LkegbJrBddN5lnZP051calEnydIHjxWDwoKC3QG8ZhgcgIqjL7404RWTQ_MP1npsw/exec';
       
       // Create FormData for Google Sheets (matches your script format)
       const formData = new URLSearchParams();
@@ -27,12 +27,17 @@ export async function registerRoutes(app: Express): Promise<Server> {
 
       // Send data to Google Sheets
       const response = await fetch(googleSheetsUrl, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        body: formData
-      });
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify({
+    name: contactData.name,
+    email: contactData.email,
+    message: contactData.message,
+    timestamp: new Date().toISOString()
+  }),
+ });
 
       if (response.ok) {
         res.json({ success: true, message: "Message sent successfully to Google Sheets!" });
@@ -55,7 +60,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
     // In a real application, this would serve the actual CV file
     res.json({ 
       success: true, 
-      downloadUrl: "https://mohammedkaifkaif.github.io/My-Personal-Portfolio-Website/images/My_CV%20(2)%205.docx",
+      downloadUrl: "https://raw.githubusercontent.com/Mohammedkaifkaif/My_Portfolio/main/images/My_CV%20(1)%205.docx",
       message: "CV download link generated"
     });
   });
