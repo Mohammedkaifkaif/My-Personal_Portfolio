@@ -23,7 +23,7 @@ export default function Contact() {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch('/api/contact', {
+      const response = await fetch('https://portfolio-backend-dqtb.onrender.com/api/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -59,7 +59,7 @@ export default function Contact() {
 
   const handleDownloadCV = async () => {
     try {
-      const response = await fetch('/api/download-cv');
+      const response = await fetch('https://portfolio-backend-dqtb.onrender.com/api/download-cv');
       const data = await response.json();
       if (data.success) {
         window.open(data.downloadUrl, '_blank');
