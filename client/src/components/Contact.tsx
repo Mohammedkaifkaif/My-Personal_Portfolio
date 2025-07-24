@@ -23,13 +23,13 @@ export default function Contact() {
     setIsSubmitting(true);
 
     try {
-  const response = await fetch('https://script.google.com/macros/s/AKfycbx8_LkegbJrBddN5lnZP051calEnydIHjxWDwoKC3QG8ZhgcgIqjL7404RWTQ_MP1npsw/exec', {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json',
-  },
-  body: JSON.stringify(formData),
-});
+      const response = await fetch('https://portfolio-backend-dqtb.onrender.com/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
 
       const data = await response.json();
 
