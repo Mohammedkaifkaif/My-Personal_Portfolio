@@ -29,15 +29,6 @@ app.get("/api/download-cv", (_req: Request, res: Response) => {
   });
 });
 
-// ✅ Contact form POST endpoint
-app.post("/api/contact", (req: Request, res: Response) => {
-  const { name, email, message } = req.body;
-  console.log("Received contact form submission:", { name, email, message });
-
-  // Simulate success (in real-world, you'd send an email or store it)
-  res.json({ success: true, message: "Message received successfully!" });
-});
-
 // ✅ Logging middleware
 app.use((req, res, next) => {
   const start = Date.now();
