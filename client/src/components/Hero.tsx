@@ -9,16 +9,16 @@ export default function Hero() {
   };
 
   const handleDownloadCV = async () => {
-    try {
-      const response = await fetch('/api/download-cv');
-      const data = await response.json();
-      if (data.success) {
-        window.open(data.downloadUrl, '_blank');
-      }
-    } catch (error) {
-      console.error('Error downloading CV:', error);
+  try {
+    const response = await fetch('https://portfolio-backend-dqtb.onrender.com/api/download-cv');
+    const data = await response.json();
+    if (data.success) {
+      window.open(data.downloadUrl, '_blank');
     }
-  };
+  } catch (error) {
+    console.error('Error downloading CV:', error);
+  }
+};
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative">
